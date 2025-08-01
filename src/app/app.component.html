@@ -1,25 +1,33 @@
 <div class="password_generator">
   <div class="password">
     <p>Your password:</p>
-    <input type="text" placeholder="Click Generate" readonly>
-    <button>Copy</button>
+    <input type="text" placeholder="Click Generate" [value]="password" readonly>
+    <button (click)="copyPassword()">Copy</button>
+    <div *ngIf="isLoad" class="loader"></div>
   </div>
   <div class="password_settings">  
     <label  class="length">
-      Length
-      <input type="number" min="1" max="30" value="10">
+      Length:
+      <input [(ngModel)]="length" type="number" min="1" max="100">
     </label>
 
     <label class="add_number">
       Number
-      <input type="checkbox">
+      <input type="checkbox" [(ngModel)]="isNumber">
     </label>
 
 
     <label class="add_symbol">
       Symbol
-      <input type="checkbox">
+      <input type="checkbox" [(ngModel)]="isSymbol">
     </label>
   </div>
-  <button (click)="generatePassword()">Generate</button>
+  <div class="generate_box">
+    <button class="generate_password" (click)="generatePassword()">Generate</button>
+    <p class="error_message" *ngIf="error_message">{{error_message}}</p>
+  </div>
+</div>
+
+<div [ngClass]="{'visible': isCopy}" class="copy_box">
+  <p>Password copied!</p>
 </div>

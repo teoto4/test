@@ -1,11 +1,124 @@
 :host{
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     .password_generator{
-        width: 30%;
+        position: relative;
+        min-width: 30%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 20px;
+        .password{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                font-size: 30px;
+            }
+            input{
+                margin-left: 2%;
+                padding: 10px;
+                font-size: 15px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            button{
+                font-size: 15px;
+                cursor: pointer;
+                margin-left: 1%;
+                padding: 10px;
+            }
+            .loader{
+                margin-left: 10px;
+                width: 20px;
+                height: 20px;
+                border: 3px solid #ccc;
+                border-top-color:#3498db;
+                border-radius:50%;
+                animation: spin 1s linear infinite;
+            }
+
+            
+        }
+
+        .password_settings{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            label{
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .length{
+                display: flex;
+                align-items: center;
+                position: relative;
+                input{
+                    margin-left: 5%;
+                    padding: 5px;
+                    text-align: center;
+                    font-size: 15px;
+                    &:focus{
+                       
+                        outline: none;
+                    }
+                }
+            }
+            .add_number, .add_symbol{
+                
+            }
+
+        }
+        .generate_box{
+            margin-top: 5%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .generate_password{
+                padding: 10px;
+                max-width: 200px;
+                cursor: pointer;
+            }
+            .error_message{
+                position: absolute;
+                bottom: -25%;
+                color: red;
+                font-size: 20px;
+            }
+        }
+        
     }
+
+    .copy_box{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 100px;
+        background-color: rgb(3, 61, 100);
+        transition: 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        p{
+            font-size: 20px;
+            color: white;
+        }
+    }
+    .copy_box.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+}
+
+@keyframes spin {
+    to{ transform: rotate(360deg); }
 }

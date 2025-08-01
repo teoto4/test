@@ -2,7 +2,7 @@
   <div class="password">
     <p>Your password:</p>
     <input type="text" placeholder="Click Generate" [value]="password" readonly>
-    <button (click)="copyPassword()">Copy</button>
+    <button (click)="copyPassword()" [disabled]="isCopy">Copy</button>
     <div *ngIf="isLoad" class="loader"></div>
   </div>
   <div class="password_settings">  
@@ -23,7 +23,7 @@
     </label>
   </div>
   <div class="generate_box">
-    <button class="generate_password" (click)="generatePassword()">Generate</button>
+    <button [disabled]="isLoad" class="generate_password" (click)="generatePassword()">Generate</button>
     <p class="error_message" *ngIf="error_message">{{error_message}}</p>
   </div>
 </div>

@@ -29,10 +29,31 @@
                 }
             }
             button{
+                background-color: #3498db;
+                border: 1px solid #3498db;
+                color: white;
                 font-size: 15px;
                 cursor: pointer;
                 margin-left: 1%;
-                padding: 10px;
+                padding: 10px 20px;
+                transition: all 0.1 ease-in-out;
+                &:hover {
+                    background-color: #2980b9;
+                    border-color: #2980b9;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                }
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: #95a5a6;
+                    border-color: #95a5a6;
+                    opacity: 0.6;
+                }
+                &:active {
+                    background-color: #1f6699;
+                    border-color: #1f6699;
+                    transform: scale(0.95); 
+                    box-shadow: none;
+                }
             }
             .loader{
                 margin-left: 10px;
@@ -71,7 +92,16 @@
                 }
             }
             .add_number, .add_symbol{
-                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                input[type="checkbox" i] {
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    margin: 3px 3px 3px 4px;
+                    width: 15px;
+                    height: 15px;
+                }
             }
 
         }
@@ -81,10 +111,34 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all 0.2 ease;
             .generate_password{
                 padding: 10px;
                 max-width: 200px;
                 cursor: pointer;
+                background-color: #3498db;
+                border: 1px solid #3498db;
+                font-size: 15px;
+                color: white;
+                &:hover {
+                    background-color: #2980b9;
+                    border-color: #2980b9;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                }
+
+                &:active {
+                    background-color: #1f6699;
+                    border-color: #1f6699;
+                    transform: scale(0.95); 
+                    box-shadow: none;
+                }
+                
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: #95a5a6;
+                    border-color: #95a5a6;
+                    opacity: 0.6;
+                }
             }
             .error_message{
                 position: absolute;

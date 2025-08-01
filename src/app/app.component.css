@@ -1,0 +1,11 @@
+:host{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .password_generator{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+}
